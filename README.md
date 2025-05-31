@@ -1,4 +1,4 @@
-# pilynya228
+# info
 collect_info
 ---
 - name: Собираем имя и адрес машин
