@@ -1,17 +1,17 @@
 # pilynya228
 collect_info
 ---
-- name: 
+- name: Собираем имя и адрес машин
   hosts: info 
   gather_facts: yes 
   tasks: 
-    - name:
+    - name: Создаем файлы с нужными данными
       copy: 
        dest: /tmp/{{ ansible_hostname }}.yml 
        content: | 
         Hostname: {{ ansible_hostname }} 
         IPAddress: {{ ansible_default_ipv4.address }} 
-    - name: 
+    - name: Перекидываем файлы с удаленного хоста
       fetch: 
 	src: /tmp/{{ ansible_hostname }}.yml 
         dest: /etc/ansible/PC-INFO/{{ ansible_hostname }}.yml 
